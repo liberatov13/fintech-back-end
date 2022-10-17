@@ -9,9 +9,11 @@ import br.com.liberato.fintech.repository.TransferenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Service
@@ -56,7 +58,7 @@ public class TransferenciaService {
         LocalDate dataTransferencia = transferencia.getDataTransferencia().toLocalDate();
         Double taxa = 0.0;
         LocalDate dataAgendada = transferencia.getDataAgendada();
-        Integer diasParaTransferencia = Period.between(dataTransferencia, dataAgendada).getDays();
+        Long diasParaTransferencia = ChronoUnit.DAYS.between(dataTransferencia, dataAgendada);
 
         if (dataAgendada.isBefore(dataTransferencia)) {
             throw new IllegalArgumentException("Data agendada não pode ser anterior a data atual");
@@ -66,13 +68,13 @@ public class TransferenciaService {
             taxa = (transferencia.getValor() * 0.03) + 3;
         } else if (diasParaTransferencia > 0 && diasParaTransferencia <= 10) {
             taxa = 12.0;
-        } else if (diasParaTransferencia < 20) {
+        } else if (diasParaTransferencia <= 20) {
             taxa = (transferencia.getValor() * 8.2) / 100;
         } else if (diasParaTransferencia <= 30) {
             taxa = (transferencia.getValor() * 6.9) / 100;
-        } else if (diasParaTransferencia > 30) {
+        } else if (diasParaTransferencia <= 40) {
             taxa = (transferencia.getValor() * 4.7) / 100;
-        } else if (diasParaTransferencia > 40) {
+        } else {
             taxa = (transferencia.getValor() * 1.7) / 100;
         }
 
