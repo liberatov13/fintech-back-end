@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -32,4 +33,7 @@ public class Transferencia {
 
     @Column(name = "agendamento")
     private LocalDate dataAgendada;
+
+    @Column(name = "data_transferencia")
+    private LocalDateTime dataTransferencia;
 }
