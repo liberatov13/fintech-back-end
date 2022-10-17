@@ -17,7 +17,7 @@ Esse sistema deve ser utilizando como back-end para o projeto [Fintech front-end
 ### Máquina local :desktop_computer:
 #### Pré-requisitos
 - Java v1.8
-- Maven
+- Maven v3.8.1
 
 ```bash
 # Clone o projeto
