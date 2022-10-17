@@ -2,7 +2,7 @@ package br.com.liberato.fintech.exception;
 
 import br.com.liberato.fintech.domain.Transferencia;
 
-public class TaxaIndefinidaException extends Exception {
+public class TaxaIndefinidaException extends RuntimeException {
 
     private Transferencia transferencia;
 
