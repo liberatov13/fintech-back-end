@@ -52,7 +52,7 @@ public class TransferenciaService {
      * @param transferencia
      * @return Valor da taxa
      */
-    private Double calcularTaxa(Transferencia transferencia) {
+    public Double calcularTaxa(Transferencia transferencia) {
         LocalDate dataTransferencia = transferencia.getDataTransferencia().toLocalDate();
         Double taxa = 0.0;
         LocalDate dataAgendada = transferencia.getDataAgendada();
