@@ -1,4 +1,4 @@
-# :dollar: Fintech API :dollar:
+# :coin: Fintech API :coin:
 
 ## Sobre o projeto :scroll:
 Aplicação back-end para um sistema que permite realizar transferências financeiras.
