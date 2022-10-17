@@ -18,7 +18,7 @@ public class Conta {
     private String numero;
 
     @Column(name = "nome_titular")
-    String nomeTitular;
+    private String nomeTitular;
 
     @Column(name = "saldo")
     private Double saldo;
