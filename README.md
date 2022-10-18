@@ -35,5 +35,19 @@ mvn spring-boot:run
 
 A API ficará disponível através de http://localhost:8080 ou http://127.0.0.1:8080
 
+### Observações
+- As seguintes contas são pré-cadastradas pela API, e podem ser utilizadas para testes:
+
+|		Nome		|		Número		|		Saldo		|
+|:---------:|:-----------:|:---------:|
+|Roberto		|123456				|20.000,00	|
+|Lucas			|000123				|150,00			|
+|João				|654321				|15000,00		|
+|Jose				|789123				|10.000,00	|
+
+- As informações das contas podem ser consultadas através do recurso `GET` http://localhost:8080/contas da API.
+- Foi utilizada uma conta padrão (Conta 789123) para o envio das transferências através do front.
+- É possivel ter acesso ao banco de dados em memória através do link http://localhost:8080/h2, as informações para acesso podem ser encontradas no arquivo [application.properties](https://github.com/liberatov13/fintech-back-end/blob/master/src/main/resources/application.properties)
+
 ## Autor :pencil2:
 [Elvis Liberato de Barros](https://www.linkedin.com/in/elvisbarros/)
